@@ -13,6 +13,7 @@
 		E43EA52B1E8CA16C00E2F8C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E43EA52A1E8CA16C00E2F8C5 /* Assets.xcassets */; };
 		E43EA52E1E8CA16C00E2F8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43EA52C1E8CA16C00E2F8C5 /* LaunchScreen.storyboard */; };
 		E43EA5361E8CA69000E2F8C5 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EA5351E8CA69000E2F8C5 /* PhotosViewController.swift */; };
+		E43EA5381E8CB72800E2F8C5 /* PhotoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EA5371E8CB72800E2F8C5 /* PhotoCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E43EA52D1E8CA16C00E2F8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E43EA52F1E8CA16C00E2F8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43EA5351E8CA69000E2F8C5 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		E43EA5371E8CB72800E2F8C5 /* PhotoCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				E43EA52C1E8CA16C00E2F8C5 /* LaunchScreen.storyboard */,
 				E43EA52F1E8CA16C00E2F8C5 /* Info.plist */,
 				E43EA5351E8CA69000E2F8C5 /* PhotosViewController.swift */,
+				E43EA5371E8CB72800E2F8C5 /* PhotoCellTableViewCell.swift */,
 			);
 			path = Tumblr;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E43EA5241E8CA16C00E2F8C5 /* AppDelegate.swift in Sources */,
+				E43EA5381E8CB72800E2F8C5 /* PhotoCellTableViewCell.swift in Sources */,
 				E43EA5361E8CA69000E2F8C5 /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
