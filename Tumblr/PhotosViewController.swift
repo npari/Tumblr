@@ -75,31 +75,47 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCellTableViewCell
         
         //Extracting each post using index
+        let imageURLString = getImageURL(indexPath: indexPath)
+        if let imageURL = URL(string: imageURLString) {
+            cell.photoImageView.setImageWith(imageURL)
+        } else {
+            cell.textLabel?.text = "No image for \(indexPath.row)"
+        }
+       
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //Get rid of the gray selection effect by deselecting the cell with animation
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc = segue.destination as! PhotoDetailsViewController
+        let indexPath = photosTableView.indexPath(for: sender as! UITableViewCell)!
+        
+        //get image for this indexpath.row
+        let imageURLString = getImageURL(indexPath: indexPath)
+        if let imageURL = URL(string: imageURLString) {
+            vc.imagURL = imageURL
+        } else {
+            
+        }
+    }
+    
+    //This method returns the url of the image for a particular row from the posts array
+    func getImageURL(indexPath: IndexPath) -> String {
         let post = posts[indexPath.row]
+        var imageURLString = ""
         
         if let photos = post.value(forKeyPath: "photos") as? [NSDictionary] {
-            
-            // photos is NOT nil, go ahead and access element 0 and extract the image url string
-            let imageURLString = photos[0].value(forKeyPath: "original_size.url") as? String
-            
-            //Extracting the image url
-            //URL(string: imageUrlString!) is NOT nil, go ahead and unwrap it and assign it to imageUrl
-            if let imageURL = URL(string: imageURLString!) {
-                
-                //assigning the url to the cell photo image view which is the UIImageView that we added to the cell
-                cell.photoImageView.setImageWith(imageURL)
-                
-            } else {
-                
-            }
-        } else {
-            // photos is nil. Good thing we didn't try to unwrap it!
+            imageURLString = (photos[0].value(forKeyPath: "original_size.url") as? String)!
         }
         
-        
-        cell.textLabel?.text = "\(indexPath.row)"
-        
-        return cell
+        return imageURLString
+    
     }
     
 
